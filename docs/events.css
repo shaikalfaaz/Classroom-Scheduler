@@ -1,0 +1,172 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.main{
+	width: 100%;
+	height: 100vh;
+	background: linear-gradient(45deg,#2193b0,#6dd5ed);
+	color: #eee;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.calendar{
+	width: 60rem;
+	height: 40rem;
+	background: linear-gradient(45deg,#000428,#004e92);
+}
+
+.month{
+	width: 100%;
+	height: 12rem;
+	background: linear-gradient(45deg,#43cea2,#185a9d);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 02rem;
+	text-align: center;
+	text-shadow: 0.3rem .2rem rgba(0,0,0,0.3);
+	font-size: 20px;
+}
+
+
+.leftarrow, .rightarrow{
+	cursor: pointer;
+	font-size: 20px;
+}
+
+.leftarrow{
+	padding-right:50px ;
+}
+
+.rightarrow{
+	padding-left:50px ;
+}
+
+.weekdays{
+	width: 100%;
+	height: 5rem;
+	padding: 0 0.5rem;
+	display: flex;
+	align-items: center;
+}
+
+.weekdays div{
+	font-size: 1.5rem;
+	font-weight: 400;
+	font-display:  0.1rem;
+	width: calc(59rem/7);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-shadow: 0.3rem .2rem rgba(0,0,0,0.3);
+
+}
+
+.days{
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 0.2rem;
+}
+
+.days div{
+	font-size: 1.4rem;
+	margin: 0.3rem;
+	width: calc(55rem/7);
+	height: 2.8rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-shadow: 0.3rem .2rem rgba(0,0,0,0.3);
+	transition: background-color 0.2s;
+}
+
+.days div:hover:not(.today){
+	background: linear-gradient(45deg,#000428,#004e92);
+	border: 0.2rem solid #777;
+	cursor: pointer;
+
+}
+
+.prev, .next{
+	opacity: 0.5;
+}
+
+.today{
+	background: linear-gradient(45deg,#185a9d,#43cea2);
+}
+
+.main-label{
+	top: 0;
+	right: 0;
+	position: relative;
+	font-size: 30px;
+	padding-top: 10px;
+	padding-left: 8px;
+	font-weight: bold;
+}
+
+.modalbx {
+    display: none; 
+    position: fixed; 
+    z-index: 5;
+    padding-top: 100px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+	
+	
+  }
+    .modalcont {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60%;
+    height: 80vh;
+	background: linear-gradient(45deg,#43cea2,#185a9d);
+
+  }
+    .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  #eventcont,#startdate,#finishdate,#desc,#teacher{
+	width: 100%;
+	padding: 12px 20px;
+	margin: 10px 0;
+	display: inline-block;
+	border: 1px solid rgb(117, 117, 117);
+	border-radius: 4px;
+	box-sizing: border-box;
+	font-size: 20px;
+  }
+#save{
+	float: right;
+	padding: 10px 15px 10px 15px;
+}
+#modaladd{
+	color: #4285F4;
+}
+.innercon{
+	color: rgb(228, 72, 0);
+}
