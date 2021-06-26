@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Event Scheduler</title>
+	<link rel="stylesheet" type="text/css" href="events.css">
+	<link rel="stylesheet" type="text/css" href="ham.css">
+	
+</head>
+<body onload="renderCalendar()">
+	<div id="menu-bar" title="Events">
+
+		<div class="main-label">Scheduler</div>
+		<div id="menu" onclick="onclickMenu()">
+			
+			<div id="bar1" class="bar" ></div>
+			<div id="bar2" class="bar" ></div>
+			<div id="bar3" class="bar" ></div>
+		 </div>
+		 <form  method="post" action="http://localhost:8070/showevent" target="_blank">
+		 <ul class="nav" id="nav"> 
+			<li><input type="text" id="textbox" placeholder="Search Event" name="searchevent"> </li>
+			<li><button id="addevent" class="button" type="button" onclick="addevents1('addevent')">Add Event</button></li>
+			<li><button id="showevents" class="button" type="submit" >Show All Event</button></li>
+			<li><button id="todayevent" class="button">Today's Events</button></li>
+			<li><button id="monthevent" class="button">Month Events</button></li>
+			<li><button id="weekevent" class="button">Week Events</button></li>
+		 </ul>
+		 </form>
+	</div>
+	<div class="menu-bg" id="menu-bg"></div>
+	
+	<div class="main">
+
+
+		<div class="calendar">
+			<div class="month"> 
+
+				<div class="leftarrow" onclick="moveDate('leftarrow')">&#10094;</div>
+				<div class="date">
+					<h1></h1>
+					<p></p>
+				</div>
+				<div class="rightarrow" onclick="moveDate('rightarrow')">&#10095;</div>
+			</div>
+
+				<div class="weekdays">
+					<div>Sun</div>
+					<div>Mon</div>
+					<div>Tue</div>
+					<div>Wed</div>
+					<div>Thu</div>
+					<div>Fri</div>
+					<div>Sat</div>
+				</div>
+
+				<div class="days"></div>
+
+		</div>
+	</div>
+
+	<div id="modalbox" class="modalbx">
+        <div class="modalcont">
+          <span class="close">&times;</span>
+          <form  method="post" action="http://localhost:8070/addevent" target="_blank">
+              <h1 style="color: black;" id="modaladd" >Add Event</h1>
+              <input type="text" id="teacher" placeholder="add teacher name" name="tname">
+
+              <input type="text" id="eventcont" placeholder="add event name" name="ename">
+
+              <span><b style="color: black;">From:</b><input id="startdate" type="datetime-local" placeholder="select date and time" name="sdname" 
+        onfocus="(this.type='datetime-local')"></span>
+
+        <span><b style="color: black;">To:</b><input id="finishdate" type="datetime-local" placeholder="select date and time" name="fdname" 
+            onfocus="(this.type='datetime-local')"></span>
+
+            <span style="color: black;"><b>Description:</b><textarea  id="desc" placeholder="add description" name="descinp"></textarea></span>
+            <input type="submit" value="Save" style="background-color:white; padding: 8px 30px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block; ">
+          </form>
+        </div>
+      </div>
+
+	<script type="text/javascript" src="events.js"></script>
+	<script type="text/javascript" src="ham.js"></script>
+	
+</body>
+</html> 
